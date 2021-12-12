@@ -19,7 +19,7 @@
                                 <rect key="frame" x="157" y="64" width="100" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Qoi-IS-eqk"/>
-                                    <constraint firstAttribute="width" constant="100" id="V31-yj-su1"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="V31-yj-su1"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="North">
@@ -35,7 +35,7 @@
                                 <rect key="frame" x="294" y="423" width="100" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="LJ3-be-1h3"/>
-                                    <constraint firstAttribute="width" constant="100" id="cPE-oO-Uvy"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="cPE-oO-Uvy"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="East">
@@ -50,7 +50,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mL-eJ-ytf">
                                 <rect key="frame" x="20" y="423" width="100" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="KwP-h2-A9R"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="KwP-h2-A9R"/>
                                     <constraint firstAttribute="height" constant="50" id="YQk-P5-C3k"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
@@ -67,7 +67,7 @@
                                 <rect key="frame" x="157" y="787" width="100" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="bcD-ev-RKB"/>
-                                    <constraint firstAttribute="width" constant="100" id="wnS-Cc-XOo"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="wnS-Cc-XOo"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="South">
@@ -83,18 +83,20 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.75686274509803919" green="0.4823529411764706" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SFo-zm-N0T" secondAttribute="trailing" constant="157" id="1tj-P8-wul"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ylh-ji-KUA" secondAttribute="trailing" constant="20" id="39V-5o-JVJ"/>
-                            <constraint firstItem="hpF-CI-hI7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="157" id="G3w-oZ-dKb"/>
+                            <constraint firstItem="ylh-ji-KUA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3mL-eJ-ytf" secondAttribute="trailing" constant="8" symbolic="YES" id="Di6-Az-OaR"/>
                             <constraint firstItem="hpF-CI-hI7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="GOq-bT-E9h"/>
                             <constraint firstItem="3mL-eJ-ytf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KgL-qY-PfH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hpF-CI-hI7" secondAttribute="trailing" constant="157" id="WQr-jh-79J"/>
+                            <constraint firstItem="SFo-zm-N0T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y4a-xT-lqO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SFo-zm-N0T" secondAttribute="bottom" constant="20" id="hZO-Jr-Kme"/>
+                            <constraint firstItem="hpF-CI-hI7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jum-ua-rbv"/>
                             <constraint firstItem="3mL-eJ-ytf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="q8M-qd-IEt"/>
                             <constraint firstItem="ylh-ji-KUA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wfw-xR-yMA"/>
-                            <constraint firstItem="SFo-zm-N0T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="157" id="xOg-yp-JWS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="OEo-7W-1Eo" kind="presentation" identifier="Direction_Navigation" id="vLh-r2-W05"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,30 +107,38 @@
             <objects>
                 <viewController id="OEo-7W-1Eo" customClass="DirectionViewController" customModule="NorthEastSouthWest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ebp-9e-KKo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="direction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hZ-Pj-XEc">
-                                <rect key="frame" x="120" y="424.5" width="174" height="47"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
-                                <color key="textColor" red="0.90817094659999997" green="1" blue="0.86116601429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4v-Sk-EF5">
+                                <rect key="frame" x="107" y="350" width="200" height="108"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="direction">
+                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.75686274509999996" green="0.4823529412" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="directionButtonAction:" destination="OEo-7W-1Eo" eventType="touchUpInside" id="JdD-Z2-i0G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OUr-Y4-04B"/>
                         <color key="backgroundColor" red="0.75686274509999996" green="0.4823529412" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6hZ-Pj-XEc" firstAttribute="centerY" secondItem="ebp-9e-KKo" secondAttribute="centerY" id="ZSt-EG-JMg"/>
-                            <constraint firstItem="6hZ-Pj-XEc" firstAttribute="centerX" secondItem="ebp-9e-KKo" secondAttribute="centerX" id="xLe-na-Cpg"/>
+                            <constraint firstItem="Q4v-Sk-EF5" firstAttribute="leading" secondItem="OUr-Y4-04B" secondAttribute="leading" constant="107" id="Xgc-vC-szc"/>
+                            <constraint firstItem="OUr-Y4-04B" firstAttribute="trailing" secondItem="Q4v-Sk-EF5" secondAttribute="trailing" constant="107" id="ma9-c8-82m"/>
+                            <constraint firstItem="Q4v-Sk-EF5" firstAttribute="top" secondItem="OUr-Y4-04B" secondAttribute="top" constant="350" id="oWi-jt-L2x"/>
+                            <constraint firstItem="OUr-Y4-04B" firstAttribute="bottom" secondItem="Q4v-Sk-EF5" secondAttribute="bottom" constant="350" id="zEE-PY-Ef1"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="directionLabel" destination="6hZ-Pj-XEc" id="4WH-iq-bwX"/>
+                        <outlet property="directionButton" destination="Q4v-Sk-EF5" id="ZeW-xu-BzI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8V-f1-noP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="810" y="69"/>
+            <point key="canvasLocation" x="808.69565217391312" y="68.973214285714278"/>
         </scene>
     </scenes>
 </document>

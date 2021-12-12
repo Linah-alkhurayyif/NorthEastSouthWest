@@ -10,8 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     var direction_text:String!
     @IBAction func directions(_ sender: UIButton) {
-//        direction_text = sender.titleLabel?.text!
-        performSegue(withIdentifier: "DirectionNavigation", sender: sender.titleLabel?.text!)
+        performSegue(withIdentifier: "Direction_Navigation", sender: sender.titleLabel?.text!)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +19,12 @@ class ViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! DirectionViewController
-//        destination.direction = direction_text
-        let d = sender as? String
-        destination.direction = d
+        let direction_text = sender as? String
+        destination.direction = direction_text
 
     }
     
-    //unwind method must be in the destination view controller
+  
     @IBAction func unwind( _ seg: UIStoryboardSegue) {
     }
 }

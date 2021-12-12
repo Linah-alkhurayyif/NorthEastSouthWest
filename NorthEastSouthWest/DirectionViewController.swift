@@ -8,14 +8,15 @@
 import UIKit
 
 class DirectionViewController: UIViewController {
-
-    @IBOutlet weak var directionLabel: UILabel!
+    
+    @IBOutlet weak var directionButton: UIButton!
+    @IBAction func directionButtonAction(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     var direction : String?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        directionLabel.text = direction
+        directionButton.setTitle( direction, for: .normal)
     }
-
-
 }
